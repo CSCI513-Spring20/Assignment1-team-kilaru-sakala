@@ -1,0 +1,4 @@
+In this program we use search Strategy as interface.Using Interface helps us implement multiple inheritance without effecting the main code.
+In this program we implemented three staregies to find the coordinates of the ship.Here we used three strategies to find the ship.So by using 
+the interface we can implement these three strategies in the derived class without rewriting again.So the  main advantage of interface is to 
+acheive multiple inhertance and provide polymorphic behaviour in java.  
