@@ -1,28 +1,25 @@
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.StringTokenizer;
 
-
-
 public class Battleship{
-    int gameCount;
-    List<String> text;
+    int count;
+    List<String> input;
     StringTokenizer tokenizer;
 
     public Battleship() {
-        gameCount = 0;
+        count = 0;
         try {
-            text = Files.readAllLines(Paths.get("src//input.txt"));
-        } catch (IOException e) {
+            input = Files.readAllLines(Paths.get("src//input.txt"));
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     public int[][] read() {
         int[][] grid = new int[25][25];
-        tokenizer = new StringTokenizer(text.get(gameCount), "(");
+        tokenizer = new StringTokenizer(input.get(count), "(");
         int tokenCount = 0;
         while (tokenizer.hasMoreTokens()) {
             String token = tokenizer.nextToken();
@@ -37,9 +34,8 @@ public class Battleship{
             else grid[row][col] = 5;
             tokenCount++;
         }
-        gameCount++;
+        count++;
         return grid;
     }
 
 }
-
